@@ -1,0 +1,32 @@
+{
+  "name": "eggplant-rising.github.io",
+  "version": "1.0.0",
+  "description": "Land of the morning calm",
+  "main": "index.js",
+  "scripts": {
+    "dart-sass": "./node-modules/.bin/dart-sass",
+    "sass:watch": "dart-sass --no-source-map --watch sass:css/",
+    "sass:compile": "dart-sass --no-source-map sass:build/css",
+    "render": "live-server",
+    "start": "npm-run-all --parallel sass:watch render",
+    "css:compress": "dart-sass --style=compressed --no-source-map build/css/main.prefix.css css/main.css ",
+    "sass:clean": "node -e \"require('fs-extra').emptyDir('build/css');\"",
+    "sass:build": "npm-run-all sass:compile css:compress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eggplant-Rising/eggplant-rising.github.io.git"
+  },
+  "author": "Allan Deutsch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eggplant-Rising/eggplant-rising.github.io/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "dart-sass": "^1.25.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "homepage": "https://github.com/Eggplant-Rising/eggplant-rising.github.io#readme"
+}
