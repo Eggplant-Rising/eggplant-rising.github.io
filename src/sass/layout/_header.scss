@@ -7,21 +7,43 @@
   background: $color__primary;
   font-size: 20px;
   text-transform:uppercase;
+  width: 100%;
+  @include respond(tablet-landscape){
+    padding: 0 25px;
+  }
+  @include respond(phone){
+    padding-left: 0 10px;
+  }
   &-logo{
-  margin: 0 40px;
+  margin-right: 40px;
   font-size: 50px;
-    &__image{
-      width: 60px;
-      background-size: cover;
-    }
+  @include respond(tablet-portrait){
+    margin-right: 20px;
+  }
+  &__image{
+    width: 60px;
+    background-size: cover;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+  }
   }
 }
-.brand{font-size:40px;}
+.brand{
+  font-size:40px;
+  @include respond(tablet-portrait){
+    font-size: 30px;
+  }
+}
 .links{
   display: flex;
   justify-content: space-between;
   margin-left: auto;
-  margin-right: 50px;
+  @include respond(tablet-portrait){
+    font-size: 18px;
+  }
+  @include respond(phone){
+    display: none;
+  }
 }
 .links a{
   color: white;

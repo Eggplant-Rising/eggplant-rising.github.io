@@ -5,13 +5,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include respond(tablet-landscape){
+      margin: 100px 0;
+    }
   }
   &__game{
     position: relative;
     display: flex;
     margin: 0 100px;
     width: 1200px;
-    height: 750px;
     background-image: 
       radial-gradient(rgba($color__primary--light,0.8), rgba($color__primary,0.8) ),
       url("https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg");
@@ -19,23 +21,51 @@
     background-position: center;
     background-size: cover;
     align-items: center;
-    
+    @media only screen and (max-width: 1300/16 * 1em){
+      flex-direction: column;
+      width: 100%;
+      margin: 0 0;
+    }
+    @media only screen and (min-width: 1200/16 * 1em){
+      height: 750px;
+      transform: translateX(-50px);
+    }
   }
   &__image{
     width: 80%;
     border: 14px solid #f0f0f0;
     transform: translateX(50px);
+    @include respond(tablet-landscape){
+      transform: none;
+      order: -1;
+      margin: 30px 0;
+      width: 80%;
+    }
+    @include respond(tablet-portrait){
+      width: 90%;
+    }
   }
   &__info{
     margin-left: 30px;
     min-width: 300px;
+    max-width: 80%;
+    @include respond(tablet-landscape){
+      margin-left: 0;
+    }
   }
   &__title{
     font-size: 30px;
     margin-bottom: 60px;
     text-align: center;
+    @include respond(tablet-landscape){
+      margin-bottom: 30px;
+    }
+    @include respond(tablet-portrait){
+      margin-bottom: 60px;
+    }
   }
   &__description{
     font-size: 18px;
+    margin-bottom: 20px;
   }
 }

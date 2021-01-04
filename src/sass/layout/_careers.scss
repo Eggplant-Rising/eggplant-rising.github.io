@@ -1,12 +1,12 @@
 .careers{
-  &__container{
     display:flex;
     flex-direction: row;
     align-items: center;
     max-width: 80%;
     margin: 0 auto 200px auto;
-    
-  }
+    @include respond(phone){
+      flex-direction: column;
+    }
   &__info{
     display:flex;
     flex-direction: column;
@@ -31,6 +31,10 @@
     z-index: 1;
     border: 10px solid #f0f0f0;
     transform: translatex(100px);
+    @include respond(tablet-portrait){
+      transform: none;
+      border: none;
+    }
   }
   &__cta-header{
     color: #fff;
@@ -50,6 +54,11 @@
     margin: 20px;
     font-size: 1.4rem; 
     color: rgb(141,78,206); 
+    border:none;
+    @include respond(phone){
+      width: 90%;
+      max-width: 90%;
+    }
     &:active, &:focus{outline: none;}
   }
   &__cta-submit{
@@ -64,6 +73,9 @@
     margin-left: 20px;
     transform: translatey(-5px);
     transition: transform .2s, box-shadow .2s;
+    @include respond(phone){
+      width: 90%;
+    }
     &:hover{
       transform: translateY(-8px);
       box-shadow: 3px 8px 15px rgba(0,0,0,.3);
@@ -72,6 +84,11 @@
     &focus{
       transform: translateY(-7px);
       box-shadow: 1px 2px 5px rgba(0,0,0, .5);
+    }
+  }
+  &__image{
+    @include respond(tablet-portrait){
+      display: none;
     }
   }
 } 

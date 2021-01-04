@@ -1,0 +1,45 @@
+
+// Media query manager
+/*
+Breakpoints:
+0-600px: 	  phone
+600-900px:  Tablet landscape
+900-1200px: Tablet landscape
+[1200-1800px] is where normal styles apply
+>1800px:    Big desktop 
+
+*/
+/*
+$breakpoint argument options:
+- phone
+- tablet-portrait
+- tablet-landscape
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px. Media query values are divided by 16 to convert to em units to 
+respond to user-defined font size changes in addition to device sizes.
+*/
+@mixin respond($breakpoint) {
+	@if $breakpoint == phone{
+		@media only screen and (max-width: 600/16 * 1em){
+			@content
+		};
+	}
+	@if $breakpoint == tablet-portrait{
+		@media only screen and (max-width: 900/16 * 1em){
+			@content
+		};
+	}
+	@if $breakpoint == tablet-landscape{
+		@media only screen and (max-width: 1200/16 * 1em){
+			@content
+		};
+	}
+	@if $breakpoint == big-desktop{
+		@media only screen and (min-width: 1800/16 * 1em){
+			@content
+		};
+	}
+}

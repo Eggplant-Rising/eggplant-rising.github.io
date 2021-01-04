@@ -4,16 +4,23 @@ display: flex;
   flex-direction: column;
   align-items: center;
   color: $color__primary;
-  &-logo{
-    font-size: 400px;
-    &__image{
-      width: 600px;
-      background-size: cover;
+  &__logo{
+    width: 600px;
+    background-size: cover;
+    @include respond(phone){
+      width: 80%;
     }
   }
   &-brand{
+    margin-top: 20px;
     font-size: 60px;
     text-transform: uppercase;
+    @include respond(phone){
+      font-size: 40px;
+    }
   }
   margin-bottom: 300px;
+  @include respond(phone){
+    margin-bottom: 100px;
+  }
 }
