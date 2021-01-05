@@ -16,7 +16,7 @@
     width: 1200px;
     background-image: 
       radial-gradient(rgba($color__primary--light,0.8), rgba($color__primary,0.8) ),
-      url("https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg");
+      url("../resources/tractor.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -32,7 +32,7 @@
     }
   }
   &__image{
-    width: 80%;
+    width: 75%;
     border: 14px solid #f0f0f0;
     transform: translateX(50px);
     @include respond(tablet-landscape){

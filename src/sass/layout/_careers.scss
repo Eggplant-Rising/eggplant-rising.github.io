@@ -1,9 +1,11 @@
 .careers{
     display:flex;
-    flex-direction: row;
+    margin-bottom: 200px;
     align-items: center;
-    max-width: 80%;
-    margin: 0 auto 200px auto;
+    justify-content: center;
+    @include respond(tablet-landscape){
+      max-width: 100%;
+    }
     @include respond(phone){
       flex-direction: column;
     }
@@ -12,7 +14,7 @@
     flex-direction: column;
     align-items: center;
     color: #0c0c0c;
-    padding-right: 10px;
+    max-width: 650px;
   }
   &__header{
     font-size: 30px;
@@ -28,12 +30,19 @@
     margin-top: 20px;
     padding: 30px 0;
     width: 100%;
+    min-width: 500px;
+    max-width: 550px;
     z-index: 1;
     border: 10px solid #f0f0f0;
     transform: translatex(100px);
-    @include respond(tablet-portrait){
+    overflow: hidden;
+    @include respond(tablet-landscape){
+      min-width: none;
       transform: none;
       border: none;
+    }
+    @include respond(phone){
+      min-width: 0;
     }
   }
   &__cta-header{
@@ -52,9 +61,16 @@
     height: 3rem;
     padding: 10px;
     margin: 20px;
+    margin-left: 40px;
     font-size: 1.4rem; 
     color: rgb(141,78,206); 
     border:none;
+    @include respond(tablet-landscape){
+      margin-left: 20px;
+      font-size: 1.2rem;
+      max-width: 85%;
+      
+    }
     @include respond(phone){
       width: 90%;
       max-width: 90%;
@@ -87,7 +103,7 @@
     }
   }
   &__image{
-    @include respond(tablet-portrait){
+    @include respond(tablet-landscape){
       display: none;
     }
   }

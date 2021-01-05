@@ -12,7 +12,7 @@
     "sass:compress": "sass --style=compressed --no-source-map src/sass/:src/css/",
     "sass:clean": "node -e \"require('fs-extra').emptyDir('docs/css');\"",
     "sass:build": "node -e \"require('fs-extra').copy('src/css','docs/css');\"",
-    "html:build": "node -e \"require('fs-extra').copy('src/html','docs/html');\"",
+    "html:build": "node -e \"require('fs-extra').copy('src/index.html','docs/index.html');\"",
     "build:all": "npm-run-all sass:compress html:build sass:build",
     "css:clean": "node -e \"require('fs-extra').emptyDir('src/css');\"",
     "build:clean": "node -e \"require('fs-extra').emptyDir('docs');\"",
